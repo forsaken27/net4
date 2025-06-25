@@ -1,6 +1,13 @@
 # net4
-97.2% accuracy MNIST classifier
-how to use it: python net4.py path_to_your_image (example: python net4.py ./data/zero.png)
+Training MNIST classifier
 
-Note: Try to give images similar to the one inside MNIST dataset. Otherwise the classification might
-not be correct!
+How to use it: python train.py batch_size
+
+How to create docker image and run it:
+
+Building: docker build -t training_network:latest .
+
+Running: docker run --gpus all training_network:latest batch_size
+
+Note: The accuracy and the training time depends on the batch size since we are using SNN network.
+

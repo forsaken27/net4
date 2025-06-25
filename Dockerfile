@@ -9,8 +9,8 @@ RUN pip install --no-cache-dir torch torchvision --index-url https://download.py
 RUN pip install --no-cache-dir spikingjelly
 
 # copy needed files
-COPY best_model_net_4.pth .
-COPY net4.py .
+COPY train.py .
+COPY train_data ./train_data
 
 # set the entry point
-ENTRYPOINT [ "python", "net4.py"]
+ENTRYPOINT [ "python", "train.py"]
